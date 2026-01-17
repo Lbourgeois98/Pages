@@ -1,0 +1,142 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.overlay {
+  min-height: 100vh;
+  padding: 40px 16px 60px;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+/* TITLE */
+h1 {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(255, 0, 255, 0.8),
+    0 0 25px rgba(0, 255, 255, 0.8);
+  background: linear-gradient(
+    45deg,
+    #ff00ff,
+    #00ffff,
+    #ffff00,
+    #ff00ff
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 6s linear infinite;
+}
+
+@keyframes glowText {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* SUBTEXT */
+p {
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* MAIN BUTTONS */
+.link-button {
+  display: block;
+  max-width: 340px;
+  margin: 16px auto;
+  padding: 16px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #ff0080,
+    #7f00ff,
+    #00ffff
+  );
+  background-size: 200%;
+  box-shadow:
+    0 0 20px rgba(255, 0, 255, 0.7),
+    0 0 40px rgba(0, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 30px rgba(255, 0, 255, 1),
+    0 0 60px rgba(0, 255, 255, 1);
+}
+
+/* NAME LIST */
+.name-list {
+  max-width: 520px;
+  margin: 40px auto 20px;
+}
+
+/* INDIVIDUAL NAME */
+.name-list a {
+  display: block;
+  margin: 14px 0;
+  padding: 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: white;
+  background: linear-gradient(
+    45deg,
+    #00ffff,
+    #ff00ff,
+    #ffff00
+  );
+  background-size: 200%;
+  box-shadow:
+    0 0 18px rgba(0, 255, 255, 0.8),
+    0 0 36px rgba(255, 0, 255, 0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.name-list a:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 30px rgba(255, 255, 0, 1),
+    0 0 60px rgba(255, 0, 255, 1);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+  .overlay {
+    padding-top: 30px;
+  }
+
+  .name-list a {
+    font-size: 1.05rem;
+    padding: 16px;
+  }
+}
+
+/* ADMIN CMS SAFE OVERRIDE */
+.cms-app * {
+  color: initial;
+}
