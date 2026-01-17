@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blacklisted Names</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overlay">
+  <h1>Blacklisted Names</h1>
+
+  <div class="name-list" id="nameList"></div>
+
+  <a class="link-button" href="index.html">⬅ Back</a>
+</div>
+
+<script>
+fetch("/data/names.json")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("nameList");
+    data.people.forEach(person => {
+      const a = document.createElement("a");
+      a.href = person.link;
+      a.target = "_blank";
+      a.textContent = person.name;
+      list.appendChild(a);
+    });
+  });
+</script>
+</body>
+</html>
