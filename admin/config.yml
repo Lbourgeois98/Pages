@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "blacklisted"
+    label: "Blacklisted Names"
+    file: "data/names.json"
+    format: "json"
+    fields:
+      - label: "People"
+        name: "people"
+        widget: list
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: string
+          - label: "Facebook Link"
+            name: "link"
+            widget: string
